@@ -1,63 +1,33 @@
 /*
 
-Classe pai
+Classe filha de Heroi
 
-Métodos atacar e usar pot
+Diferenciar método atacar e não usa potions
 
  */
 package Entidades;
+
+import java.util.Random;
 
 /**
  *
  * @author NOTE CK
  */
-public class Heroi {
+public class Monstro extends Heroi {
 
-    public String nome;
-    public int life;
-    public int qtdPots;
-    public int ataque;
-    public String nomeAtaque;
+    Random r = new Random();
 
-    public Heroi(String nome, int life, int qtdPots, int ataque, String nomeAtaque) {
-        this.nome = nome;
-        this.life = life;
-        this.qtdPots = qtdPots;
-        this.ataque = ataque;
-        this.nomeAtaque = nomeAtaque;
+    public Monstro(String nome, int life, String nomeAtaque) {
+        super(nome, life, nomeAtaque);
     }
 
-    public Heroi(String nome, int life, String nomeAtaque) {
-        this.nome = nome;
-        this.life = life;
-        this.nomeAtaque = nomeAtaque;
-    }
+    public void monstroAtacar() {
 
-    public void atacar() {
+        int i = r.nextInt(100) + 1;
         System.out.println(" ");
-        System.out.println("COMBATE------------> " + this.nome + " ataca com: " + this.nomeAtaque);
-        System.out.println("COMBATE------------> Dano causado: " + this.ataque);
+        System.out.println("COMBATE------------> O temido " + this.nome + " ataca com: " + this.nomeAtaque);
+        System.out.println("COMBATE------------> Dano causado: " + i);
         System.out.println(" ");
-
-    }
-
-    public void usarPots() {
-
-        if (this.qtdPots >= 1) {
-            System.out.println(" ");
-            System.out.println("COMBATE------------> " +this.nome + " usou uma poção de cura e recuperou: 100 de vida!");
-            this.life += 100;
-            this.qtdPots -= 1;
-            System.out.println(" ");
-
-        } else {
-
-            System.out.println(" ");
-            System.out.println("-----   Sem poção para usar!!!   -----");
-            System.out.println(" ");
-
-        }
-
     }
 
 }
