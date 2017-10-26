@@ -81,12 +81,12 @@ public class ABatalhaDeSuaburu {
 
                 case (1):
                     heroi.atacar();
-                    monstro.atacar();
+                    monstro.monstroAtacar();
                     break;
 
                 case (2):
                     heroi.usarPots();
-                    monstro.atacar();
+                    monstro.monstroAtacar();
                     break;
 
             }
