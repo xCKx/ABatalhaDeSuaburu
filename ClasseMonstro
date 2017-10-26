@@ -23,10 +23,10 @@ public class Monstro extends Heroi {
 
     public void monstroAtacar() {
 
-        int randomInt = r.nextInt(100) + 1;
+        int i = r.nextInt(100) + 1;
         System.out.println(" ");
         System.out.println("COMBATE------------> O temido " + this.nome + " ataca com: " + this.nomeAtaque);
-        System.out.println("COMBATE------------> Dano causado: " + randomInt);
+        System.out.println("COMBATE------------> Dano causado: " + i);
         System.out.println(" ");
     }
 
