@@ -1,0 +1,33 @@
+/*
+
+Classe filha de Heroi
+
+Diferenciar método atacar e não usa potions
+
+ */
+package Entidades;
+
+import java.util.Random;
+
+/**
+ *
+ * @author NOTE CK
+ */
+public class Monstro extends Heroi {
+
+    Random r = new Random();
+
+    public Monstro(String nome, int life, String nomeAtaque) {
+        super(nome, life, nomeAtaque);
+    }
+
+    public void monstroAtacar() {
+
+        int randomInt = r.nextInt(100) + 1;
+        System.out.println(" ");
+        System.out.println("COMBATE------------> O temido " + this.nome + " ataca com: " + this.nomeAtaque);
+        System.out.println("COMBATE------------> Dano causado: " + randomInt);
+        System.out.println(" ");
+    }
+
+}
