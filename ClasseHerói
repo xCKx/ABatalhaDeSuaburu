@@ -33,19 +33,21 @@ public class Heroi {
         this.nomeAtaque = nomeAtaque;
     }
 
-    public void atacar() {
+    public void atacar(int ataque, Monstro monstro) {
+        
         System.out.println(" ");
         System.out.println("COMBATE------------> " + this.nome + " ataca com: " + this.nomeAtaque);
         System.out.println("COMBATE------------> Dano causado: " + this.ataque);
         System.out.println(" ");
-
+        int dano = this.ataque;
+        monstro.life = monstro.life - dano;
     }
 
     public void usarPots() {
 
         if (this.qtdPots >= 1) {
             System.out.println(" ");
-            System.out.println("COMBATE------------> " +this.nome + " usou uma poção de cura e recuperou: 100 de vida!");
+            System.out.println("COMBATE------------> " + this.nome + " usou uma poção de cura e recuperou: 100 de vida!");
             this.life += 100;
             this.qtdPots -= 1;
             System.out.println(" ");
