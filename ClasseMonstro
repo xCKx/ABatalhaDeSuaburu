@@ -21,13 +21,14 @@ public class Monstro extends Heroi {
         super(nome, life, nomeAtaque);
     }
 
-    public void monstroAtacar() {
+    public void atacar(Heroi heroi) {
 
-        int i = r.nextInt(100) + 1;
+        int dano = r.nextInt(100) + 1;
         System.out.println(" ");
         System.out.println("COMBATE------------> O temido " + this.nome + " ataca com: " + this.nomeAtaque);
-        System.out.println("COMBATE------------> Dano causado: " + i);
+        System.out.println("COMBATE------------> Dano causado: " + dano);
         System.out.println(" ");
+        heroi.life -= dano;
     }
 
 }
