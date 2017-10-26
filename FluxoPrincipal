@@ -43,7 +43,9 @@ public class ABatalhaDeSuaburu {
                 System.out.println("Alma Penada: Pobre humano, achou que teria alguma chance...");
                 System.out.println("             Hummm...posso aproveitar os olhos para rituais, ossos para ferramentas e claro...");
                 System.out.println("             CARNE!!! Prometo saborear ao máximo.... Mahuahuahauhau!!");
-
+                System.out.println(" ");
+                break;
+                
             } else if (monstro.life <= 0) {
                 // Texto de VITÓRIA
                 System.out.println(" ");
@@ -53,7 +55,9 @@ public class ABatalhaDeSuaburu {
                 System.out.println("             Mas o que posso fazer? Voltarei so sofrimento eterno.");
                 System.out.println("             Apenas uma dica grande Herói, tente não entrar aqui novamente, pois com certeza Baphomet será substituído");
                 System.out.println("             por alguma besta infernal com poderes que vão além da sua imaginação...");
-
+                System.out.println(" ");
+                break;
+                
             } else {
                 // Menu principal
                 System.out.println(" ");
@@ -80,13 +84,13 @@ public class ABatalhaDeSuaburu {
             switch (opcao) {
 
                 case (1):
-                    heroi.atacar();
-                    monstro.monstroAtacar();
+                    heroi.atacar(50, monstro);
+                    monstro.atacar(heroi);
                     break;
 
                 case (2):
                     heroi.usarPots();
-                    monstro.monstroAtacar();
+                    monstro.atacar(heroi);
                     break;
 
             }
