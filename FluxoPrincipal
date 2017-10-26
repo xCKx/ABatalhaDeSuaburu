@@ -1,0 +1,105 @@
+/*
+
+Jogo de turno baseado em D&D, apenas um herói e um monstro os turnos decidirão cairá!
+
+----------- A BATALHA DE SUABURU: CAMINHOS ARDENTES ----------------------
+
+
+
+ */
+package a.batalha.de.suaburu;
+
+import java.util.Scanner;
+import Entidades.Heroi;
+import Entidades.Monstro;
+import java.util.Random;
+
+public class ABatalhaDeSuaburu {
+
+    public static void main(String[] args) {
+
+        // Variáveis & Objetos
+        Scanner scan = new Scanner(System.in);
+        Heroi heroi = new Heroi("Suaburu", 600, 3, 50, "Espada Partida!");
+        Monstro monstro = new Monstro("Baphomet", 999, "Garra da Maldição!");
+        int opcao = 0;
+
+        // Texto Inicial
+        System.out.println("Alma Penada: Bem vindo, sei apenas o teu nome gravado no brasão de Herói, e aqui diz: Suaburu... Não sei como veio parar nos caminhos ardentes do inferno,");
+        System.out.println("             mas sei que provavelmente deseja sair daqui, e devo te adiantar que a única saída é aquela gigante porta de ferro emanando uma luz azul...");
+        System.out.println("             E como tudo na vida, não será tão simples como você gostaria. Para sair daqui, deves batalhar até a morte contra o mais temido dos guardiões do inferno,");
+        System.out.println("             o pecaminoso Baphomet!");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("             QUE A BATALHA COMECE!!!");
+        System.out.println("");
+        while (true) {
+
+            if (heroi.life <= 0) {
+                // Texto de derrota
+                System.out.println(" ");
+                System.out.println("-----   GAME OVER   -----  ");
+                System.out.println(" ");
+                System.out.println("Alma Penada: Pobre humano, achou que teria alguma chance...");
+                System.out.println("             Hummm...posso aproveitar os olhos para rituais, ossos para ferramentas e claro...");
+                System.out.println("             CARNE!!! Prometo saborear ao máximo.... Mahuahuahauhau!!");
+
+            } else if (monstro.life <= 0) {
+                // Texto de VITÓRIA
+                System.out.println(" ");
+                System.out.println("-----   VITÓRIA!!   -----  ");
+                System.out.println(" ");
+                System.out.println("Alma Penada: Eu não esperava por isso, afinal, Baphomet era mais forte guardião do inferno...");
+                System.out.println("             Mas o que posso fazer? Voltarei so sofrimento eterno.");
+                System.out.println("             Apenas uma dica grande Herói, tente não entrar aqui novamente, pois com certeza Baphomet será substituído");
+                System.out.println("             por alguma besta infernal com poderes que vão além da sua imaginação...");
+
+            } else {
+                // Menu principal
+                System.out.println(" ");
+                System.out.println("#######- HERÓI -####### ");
+                System.out.println("#  Nome : " + heroi.nome + "     # ");
+                System.out.println("#  HP : " + heroi.life + "           # ");
+                System.out.println("#  Poções: " + heroi.qtdPots + "          # ");
+                System.out.println("#######--------######## ");
+                System.out.println(" ");
+                System.out.println("#######- INIMIGO -####### ");
+                System.out.println("#  Nome : " + monstro.nome + "      # ");
+                System.out.println("#  HP : " + monstro.life + "             # ");
+                System.out.println("#                       # ");
+                System.out.println("#######--------########## ");
+                System.out.println(" ");
+                System.out.println("O que voce deseja fazer?");
+                System.out.println("1 - Atacar!");
+                System.out.println("2 - Usar poção ><' ");
+                System.out.println("3 - Desistir da luta covardemente...");
+                System.out.println(" ");
+                opcao = scan.nextInt();
+            }
+
+            switch (opcao) {
+
+                case (1):
+                    heroi.atacar();
+                    monstro.atacar();
+                    break;
+
+                case (2):
+                    heroi.usarPots();
+                    monstro.atacar();
+                    break;
+
+            }
+            if (opcao == 3) {
+                // Texto desistir
+                System.out.println(" ");
+                System.out.println("Alma Penada: Muito bem, eu já esparava isso de um humano... Além do mais, o inferno anda muito sem graça ultimamente.");
+                System.out.println("             Vai ser interesante ter uma alma viva por perto, posso brincar de Fogo da Perdição com você....");
+                System.out.println(" ");
+                System.out.println("             Muahuahuahuahuahuau!!!");
+                System.out.println(" ");
+                break;
+            }
+        }
+    }
+}
